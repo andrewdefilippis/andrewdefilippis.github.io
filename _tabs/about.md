@@ -4,5 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
+Hello,
 
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
+My name is Andrew Ryan DeFilippis.  I work on {{ page.team }} as a {{ page.selftitle }}, developing, deploying, and managing the service and its infrastructure.
