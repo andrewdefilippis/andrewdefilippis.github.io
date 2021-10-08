@@ -4,6 +4,9 @@ source "https://rubygems.org"
 
 gem "jekyll-theme-chirpy", "~> 4.3", ">= 4.3.1"
 
+# Security Update
+gem "nokogiri", "~>1.12", ">=1.12.5"
+
 group :test do
   gem "html-proofer", "~> 3.18"
 end
