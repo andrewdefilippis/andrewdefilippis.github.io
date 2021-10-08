@@ -1,0 +1,42 @@
+#  The contact options.
+
+-
+  type: linkedin
+  icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
+  url:  'https://www.linkedin.com/in/andrewdefilippis'
+-
+  type: github
+  icon: 'fab fa-github'
+-
+  type: facebook
+  icon: 'fab fa-facebook'   # icons powered by <https://fontawesome.com/>
+  url:  'https://www.facebook.com/andrewdefilippis'
+-
+  type: twitter
+  icon: 'fab fa-twitter'
+-
+  type: reddit
+  icon: 'fab fa-reddit'   # icons powered by <https://fontawesome.com/>
+  url:  'https://reddit.com/user/andrewdefilippis'
+-
+  type: keybase
+  icon: 'fab fa-keybase'   # icons powered by <https://fontawesome.com/>
+  url:  'https://keybase.io/andrewdefilippis'
+-
+  type: rss
+  icon: 'fas fa-rss'
+  noblank: true
+
+# Uncomment and complete the url below to enable more contact options
+# -
+#   type: mastodon
+#   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
+#   url:  ''                  # Fill with your mastodon account page
+# -
+#   type: stack-overflow
+#   icon: 'fab fa-stack-overflow'
+#   url:  ''                  # Fill with your stackoverflow homepage
+# -
+#   type: email
+#   icon: 'fas fa-envelope'
+#   noblank: true
