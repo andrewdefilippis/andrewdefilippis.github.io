@@ -1,8 +1,8 @@
 ---
 title: Transferring Teams at AWS
 date: 2021-10-15 09:40 -0700
-categories: [Amazon, AWS, Cloud, Career]
-tags: [cloud, aws, amazon, cloudwatch logs, api gateway, premium support]
+categories: [Career, AWS]
+tags: [cloud, aws, amazon, cloudwatch logs, api gateway, premium support, email]
 ---
 
 Hello everyone,

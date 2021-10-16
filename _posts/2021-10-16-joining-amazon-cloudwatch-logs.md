@@ -1,7 +1,7 @@
 ---
 title: Joining Amazon CloudWatch Logs
 date: 2021-10-16 14:00 -0700
-categories: [Amazon, AWS, Cloud, Career]
+categories: [Career, AWS]
 tags: [cloud, aws, amazon, cloudwatch logs, api gateway]
 ---
 
