@@ -135,7 +135,8 @@ defaults:
       permalink: /:title/
       dynamic_title: true    # Hide title in mobile screens.
       selftitle: 'Systems Engineer II'
-      team: 'Amazon CloudWatch Logs'
+      currentteam: 'Amazon CloudWatch Logs'
+      previousteam: 'Amazon API Gateway'
 
 sass:
   style: compressed
