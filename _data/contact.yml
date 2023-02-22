@@ -1,15 +1,19 @@
 #  The contact options.
 
 -
-  type: github
-  icon: 'fab fa-github'
--
   type: linkedin
   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
   url:  'https://www.linkedin.com/in/andrewdefilippis'
-#-
-#  type: twitter
-#  icon: 'fab fa-twitter'
+-
+  type: github
+  icon: 'fab fa-github'
+-
+  type: facebook
+  icon: 'fab fa-facebook'   # icons powered by <https://fontawesome.com/>
+  url:  'https://www.facebook.com/andrewdefilippis'
+-
+  type: twitter
+  icon: 'fab fa-twitter'
 -
   type: reddit
   icon: 'fab fa-reddit'   # icons powered by <https://fontawesome.com/>
@@ -18,10 +22,6 @@
   type: keybase
   icon: 'fab fa-keybase'   # icons powered by <https://fontawesome.com/>
   url:  'https://keybase.io/andrewdefilippis'
--
-  type: facebook
-  icon: 'fab fa-facebook'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.facebook.com/andrewdefilippis'
 -
   type: rss
   icon: 'fas fa-rss'
