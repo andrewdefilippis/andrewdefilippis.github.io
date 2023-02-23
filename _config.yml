@@ -79,7 +79,7 @@ theme_mode:   # [light|dark]
 img_cdn: 'https://content.andrewdefilippis.com/images/'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: 'avatar/andrewdefilippis.png'
+avatar: 'avatar/20230223060800/andrewdefilippis.png'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
