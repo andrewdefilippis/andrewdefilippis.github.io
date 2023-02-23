@@ -1,6 +1,6 @@
 ---
 title: Amazon Return To Office Mandate
-date: 2023-23-16 03:00 -0000
+date: 2023-02-23 03:00 -0000
 categories: [Career, AWS]
 tags: [cloud, aws, amazon, covid]
 ---
