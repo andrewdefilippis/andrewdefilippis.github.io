@@ -12,9 +12,6 @@
   icon: 'fab fa-facebook'   # icons powered by <https://fontawesome.com/>
   url:  'https://www.facebook.com/andrewdefilippis'
 -
-  type: twitter
-  icon: 'fab fa-twitter'
--
   type: reddit
   icon: 'fab fa-reddit'   # icons powered by <https://fontawesome.com/>
   url:  'https://reddit.com/user/andrewdefilippis'
@@ -28,6 +25,9 @@
   noblank: true
 
 # Uncomment and complete the url below to enable more contact options
+# -
+#   type: twitter
+#   icon: 'fab fa-twitter'
 # -
 #   type: mastodon
 #   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
