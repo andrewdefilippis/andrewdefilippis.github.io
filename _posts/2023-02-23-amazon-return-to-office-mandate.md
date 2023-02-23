@@ -27,9 +27,9 @@ When employees are forced back to the office, the end of business hours becomes 
 
 ---
 
-1. https://www.thedailybeast.com/inside-the-employee-revolt-rocking-amazon-over-return-to-work
-2. https://www.bloomberg.com/news/newsletters/2023-02-21/tax-breaks-threaten-work-from-home-as-ceo-s-get-return-to-office-incentives
-3. https://www.washingtonpost.com/business/2023/02/22/amazon-return-to-office-rto-petition-pusback/
-4. https://www.cnbc.com/2023/02/21/amazon-employees-push-ceo-andy-jassy-to-drop-return-to-office-mandate.html
-5. https://finance.yahoo.com/news/16-000-amazon-workers-joined-110817418.html
-6. https://www.geekwire.com/2023/seattle-mayor-praises-amazons-back-to-office-policy-in-state-of-the-city-address/
+1. [https://www.thedailybeast.com/inside-the-employee-revolt-rocking-amazon-over-return-to-work](https://www.thedailybeast.com/inside-the-employee-revolt-rocking-amazon-over-return-to-work)
+2. [https://www.bloomberg.com/news/newsletters/2023-02-21/tax-breaks-threaten-work-from-home-as-ceo-s-get-return-to-office-incentives](https://www.bloomberg.com/news/newsletters/2023-02-21/tax-breaks-threaten-work-from-home-as-ceo-s-get-return-to-office-incentives)
+3. [https://www.washingtonpost.com/business/2023/02/22/amazon-return-to-office-rto-petition-pusback/](https://www.washingtonpost.com/business/2023/02/22/amazon-return-to-office-rto-petition-pusback/)
+4. [https://www.cnbc.com/2023/02/21/amazon-employees-push-ceo-andy-jassy-to-drop-return-to-office-mandate.html](https://www.cnbc.com/2023/02/21/amazon-employees-push-ceo-andy-jassy-to-drop-return-to-office-mandate.html)
+5. [https://finance.yahoo.com/news/16-000-amazon-workers-joined-110817418.html](https://finance.yahoo.com/news/16-000-amazon-workers-joined-110817418.html)
+6. [https://www.geekwire.com/2023/seattle-mayor-praises-amazons-back-to-office-policy-in-state-of-the-city-address/](https://www.geekwire.com/2023/seattle-mayor-praises-amazons-back-to-office-policy-in-state-of-the-city-address/)
