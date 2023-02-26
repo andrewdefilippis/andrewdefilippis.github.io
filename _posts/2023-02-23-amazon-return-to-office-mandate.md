@@ -3,6 +3,7 @@ title: Amazon Return To Office Mandate
 date: 2023-02-23 03:00 -0000
 categories: [Career, AWS]
 tags: [cloud, aws, amazon, covid]
+image: /images/posts/2023-02-23-amazon-return-to-office-mandate/hong-kong-traffic-stock-photo.png
 ---
 
 As of Friday the 17th of February, 2023, Andrew (Andy) Jassy announced via a public press release/Amazon News article, that all Amazon employees are to return to office starting May 1st, 2023.
@@ -27,9 +28,10 @@ When employees are forced back to the office, the end of business hours becomes 
 
 ---
 
-1. [https://www.thedailybeast.com/inside-the-employee-revolt-rocking-amazon-over-return-to-work](https://www.thedailybeast.com/inside-the-employee-revolt-rocking-amazon-over-return-to-work)
-2. [https://www.bloomberg.com/news/newsletters/2023-02-21/tax-breaks-threaten-work-from-home-as-ceo-s-get-return-to-office-incentives](https://www.bloomberg.com/news/newsletters/2023-02-21/tax-breaks-threaten-work-from-home-as-ceo-s-get-return-to-office-incentives)
-3. [https://www.washingtonpost.com/business/2023/02/22/amazon-return-to-office-rto-petition-pusback/](https://www.washingtonpost.com/business/2023/02/22/amazon-return-to-office-rto-petition-pusback/)
-4. [https://www.cnbc.com/2023/02/21/amazon-employees-push-ceo-andy-jassy-to-drop-return-to-office-mandate.html](https://www.cnbc.com/2023/02/21/amazon-employees-push-ceo-andy-jassy-to-drop-return-to-office-mandate.html)
-5. [https://finance.yahoo.com/news/16-000-amazon-workers-joined-110817418.html](https://finance.yahoo.com/news/16-000-amazon-workers-joined-110817418.html)
-6. [https://www.geekwire.com/2023/seattle-mayor-praises-amazons-back-to-office-policy-in-state-of-the-city-address/](https://www.geekwire.com/2023/seattle-mayor-praises-amazons-back-to-office-policy-in-state-of-the-city-address/)
+1. [https://www.aboutamazon.com/news/company-news/andy-jassy-update-on-amazon-return-to-office](https://www.aboutamazon.com/news/company-news/andy-jassy-update-on-amazon-return-to-office)
+2. [https://www.thedailybeast.com/inside-the-employee-revolt-rocking-amazon-over-return-to-work](https://www.thedailybeast.com/inside-the-employee-revolt-rocking-amazon-over-return-to-work)
+3. [https://www.bloomberg.com/news/newsletters/2023-02-21/tax-breaks-threaten-work-from-home-as-ceo-s-get-return-to-office-incentives](https://www.bloomberg.com/news/newsletters/2023-02-21/tax-breaks-threaten-work-from-home-as-ceo-s-get-return-to-office-incentives)
+4. [https://www.washingtonpost.com/business/2023/02/22/amazon-return-to-office-rto-petition-pusback/](https://www.washingtonpost.com/business/2023/02/22/amazon-return-to-office-rto-petition-pusback/)
+5. [https://www.cnbc.com/2023/02/21/amazon-employees-push-ceo-andy-jassy-to-drop-return-to-office-mandate.html](https://www.cnbc.com/2023/02/21/amazon-employees-push-ceo-andy-jassy-to-drop-return-to-office-mandate.html)
+6. [https://finance.yahoo.com/news/16-000-amazon-workers-joined-110817418.html](https://finance.yahoo.com/news/16-000-amazon-workers-joined-110817418.html)
+7. [https://www.geekwire.com/2023/seattle-mayor-praises-amazons-back-to-office-policy-in-state-of-the-city-address/](https://www.geekwire.com/2023/seattle-mayor-praises-amazons-back-to-office-policy-in-state-of-the-city-address/)
