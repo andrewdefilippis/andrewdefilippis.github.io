@@ -46,7 +46,7 @@ layout: page
         {% if post.image %}
         <div class="post-img-cnt">
             <a href="{{ post.url | relative_url }}">
-                <img src="{{site.img_cdn}}{{post.image | post.image.path}}" alt="{{ post.image.alt | default: "Preview Image" }}" class="post-img">
+                <img src="{{site.img_cdn}}{{post.image | default: post.image.path}}" alt="{{ post.image.alt | default: "Preview Image" }}" class="post-img">
             </a>
         </div>
         {% endif %}
