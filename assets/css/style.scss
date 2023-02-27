@@ -15,7 +15,7 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   .post-preview {
     .post-img-cnt{
       float:top;
-      padding:10px;
+      padding:10px 10px 25px 10px;
     }
 
     .post-img{
