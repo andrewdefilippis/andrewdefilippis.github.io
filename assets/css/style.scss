@@ -1,0 +1,25 @@
+---
+---
+
+/*
+  If the number of TAB files has changed, the following variable is required.
+  And it must be defined before `@import`.
+*/
+$tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
+
+@import "{{ site.theme }}";
+
+/* append your custom style below */
+
+#post-list {
+  .post-preview {
+    .post-img-cnt{
+      float:top;
+      padding:10px;
+    }
+
+    .post-img{
+      max-width: 100%;
+    }
+  } // .post-preview
+} // #post-list
