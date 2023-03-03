@@ -1,7 +1,7 @@
 ---
 title: Updates to My Website
 date: 2023-02-27 00:30 -0000
-categories: [Tech, Blog]
+categories: [Software Development, Web Development]
 tags: [personal, website, jekyll, chirpy, tech, blog, update, code, change]
 image: /images/posts/2023-02-27-updates-to-my-website/coding-stock-photo.png
 ---
