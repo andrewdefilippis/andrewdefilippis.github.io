@@ -16,15 +16,15 @@
   icon: 'fab fa-reddit'   # icons powered by <https://fontawesome.com/>
   url:  'https://reddit.com/user/andrewdefilippis'
 -
-  type: keybase
-  icon: 'fab fa-keybase'   # icons powered by <https://fontawesome.com/>
-  url:  'https://keybase.io/andrewdefilippis'
--
   type: rss
   icon: 'fas fa-rss'
   noblank: true
 
 # Uncomment and complete the url below to enable more contact options
+#-
+#  type: keybase
+#  icon: 'fab fa-keybase'   # icons powered by <https://fontawesome.com/>
+#  url:  'https://keybase.io/andrewdefilippis'
 # -
 #   type: twitter
 #   icon: 'fab fa-twitter'
