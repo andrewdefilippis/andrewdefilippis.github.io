@@ -44,11 +44,11 @@ layout: page
 
     {% assign page_fn_no_ext = post.path | split: "/" | last | split: "." | first %}
     {% assign post_image = post.image %}
-    {% assign image_path_prefix = site.img_cdn | append: site.img_cdn_path_prefix | append: page_fn_no_ext | append: "/" %}
-    {% assign jpg_path = image_path_prefix | append: post_image | append: '.jpg' %}
-    {% assign png_path = image_path_prefix | append: post_image | append: '.png' %}
-    {% assign avif_path = image_path_prefix | append: post_image | append: '.avif' %}
-    {% assign webp_path = image_path_prefix | append: post_image | append: '.webp' %}
+    {% assign image_path_prefix = site.img_cdn | append: site.img_cdn_path_prefix | append: page_fn_no_ext | append: "/" | append: post_image %}
+    {% assign jpg_path = image_path_prefix | append: '.jpg' %}
+    {% assign png_path = image_path_prefix | append: '.png' %}
+    {% assign avif_path = image_path_prefix | append: '.avif' %}
+    {% assign webp_path = image_path_prefix | append: '.webp' %}
 
     <div class="post-preview">
         {% if post.image %}
