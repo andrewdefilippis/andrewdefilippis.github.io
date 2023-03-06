@@ -52,14 +52,18 @@ layout: page
 
     <div class="post-preview">
         {% if post.image %}
-        <div class="post-img-cnt">
-            <a href="{{ post.url | relative_url }}">
-                <picture>
-                    <source type="image/avif" srcset="{{avif_path}}" />
-                    <source type="image/webp" srcset="{{webp_path}}" />
-                    <img src="{{png_path}}" srcset="{{png_path}}" loading="lazy" decoding="async" w="762" h="400" alt="{{ post.image.alt | default: 'Preview Image' }}" class="post-img">
-                </picture>
-            </a>
+        <div class="post-img-cnt" style="max-width: 770px;">
+            <div style="padding: 0 0 54%; position: relative">
+                <div style="position: absolute; max-width: 100%; padding: 0">
+                    <a href="{{ post.url | relative_url }}">
+                        <picture>
+                            <source type="image/avif" srcset="{{avif_path}}" />
+                            <source type="image/webp" srcset="{{webp_path}}" />
+                            <img src="{{png_path}}" srcset="{{png_path}}" loading="lazy" decoding="async" w="762" h="400" alt="{{ post.image.alt | default: 'Preview Image' }}" class="post-img">
+                        </picture>
+                    </a>
+                </div>
+            </div>
         </div>
         {% endif %}
 
