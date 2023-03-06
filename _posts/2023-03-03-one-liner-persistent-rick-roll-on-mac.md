@@ -3,7 +3,7 @@ title: One-Liner Persistent Rick Roll on Mac
 date: 2023-03-03 09:30:00 +0000
 categories: [Software Development, Shell]
 tags: [tech, programming, linux, shell, script, one-liner, bash, zsh, sh, rickroll, rick, roll, apple, mac, macos]
-image: /images/posts/2023-03-03-one-liner-persistent-rick-roll-on-mac/macintosh-computer-stock-photo.webp
+image: /images/posts/2023-03-03-one-liner-persistent-rick-roll-on-mac/macintosh-computer-stock-photo.avif
 ---
 
 That feeling that you get when Rickrolling someone, is bliss.  But what if you could Rickroll someone repeatedly, obscurely, and above all, absolutely annoyingly?

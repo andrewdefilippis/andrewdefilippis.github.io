@@ -3,7 +3,7 @@ title: Amazon Return To Office Mandate
 date: 2023-02-23 03:00 -0000
 categories: [Career, AWS]
 tags: [cloud, aws, amazon, covid]
-image: /images/posts/2023-02-23-amazon-return-to-office-mandate/hong-kong-traffic-stock-photo.webp
+image: /images/posts/2023-02-23-amazon-return-to-office-mandate/hong-kong-traffic-stock-photo.avif
 ---
 
 As of Friday the 17th of February, 2023, Andrew (Andy) Jassy announced via a public press release/Amazon News article, that all Amazon employees are to return to office starting May 1st, 2023.
