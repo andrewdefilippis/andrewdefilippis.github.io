@@ -42,11 +42,23 @@ layout: page
 
     {% for post in posts %}
 
+    {% assign page_fn_no_ext = post.path | split: "/" | last | split: "." | first %}
+    {% assign post_image = post.image %}
+    {% assign image_path_prefix = site.img_cdn | append: site.img_cdn_path_prefix | append: page_fn_no_ext | append: "/" %}
+    {% assign jpg_path = image_path_prefix | append: post_image | append: '.jpg' %}
+    {% assign png_path = image_path_prefix | append: post_image | append: '.png' %}
+    {% assign avif_path = image_path_prefix | append: post_image | append: '.avif' %}
+    {% assign webp_path = image_path_prefix | append: post_image | append: '.webp' %}
+
     <div class="post-preview">
         {% if post.image %}
         <div class="post-img-cnt">
             <a href="{{ post.url | relative_url }}">
-                <img src="{{site.img_cdn}}{{post.image | default: post.image.path}}" alt="{{ post.image.alt | default: "Preview Image" }}" class="post-img">
+                <picture>
+                    <source type="image/avif" srcset="{{avif_path}}" />
+                    <source type="image/webp" srcset="{{webp_path}}" />
+                    <img src="{{png_path}}" srcset="{{png_path}}" loading="lazy" decoding="async" alt="{{ post.image.alt | default: 'Preview Image' }}" class="post-img">
+                </picture>
             </a>
         </div>
         {% endif %}
