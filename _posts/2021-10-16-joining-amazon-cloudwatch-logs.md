@@ -3,6 +3,7 @@ title: Joining Amazon CloudWatch Logs
 date: 2021-10-16 14:00 -0700
 categories: [Career, AWS]
 tags: [cloud, aws, amazon, cloudwatch logs, api gateway]
+image: joining-amazon-cloudwatch-logs
 ---
 
 Starting Monday the 18th of October, 2021, I will begin working within the Amazon CloudWatch Logs service team at Amazon Web Services (AWS).
