@@ -6,7 +6,7 @@ tags: [cloud, aws, amazon, cloudwatch logs, tech, programming, software, develop
 image: leaving-amazon-web-services
 ---
 
-It was Wednesday the 28th of January at 02:48.  I was checking my phone for the last time, right after getting into bed after a long day and late night from being over-caffinated.
+It was Wednesday the 28th of January at 02:48.  I was checking my phone for the last time, right after getting into bed after a long day and late night from being over-caffeinated.
 
 And there it was.  A notification.  The one you don't want to see.
 
