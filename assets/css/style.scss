@@ -11,6 +11,25 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 
 /* append your custom style below */
 
+#sidebar {
+  .profile-wrapper {
+    #avatar {
+      margin-left: 8rem;
+    }
+    .site-title {
+      margin-left: 1.7rem;
+      margin-top: 1rem;
+
+      a {
+        font-size: 1.5rem;
+      }
+    }
+    .site-subtitle {
+      margin-left: 1.7rem;
+    }
+  }
+}
+
 #post-list {
   .post-preview {
     padding: .7rem;
