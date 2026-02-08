@@ -47,6 +47,19 @@
 
   {{ seo_tags }}
 
+  {% assign avatar_url = site.img_cdn | append: site.avatar %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.social.name }}",
+    "url": "{{ site.url }}",
+    "image": "{{ avatar_url }}",
+    "jobTitle": "Software Engineer",
+    "sameAs": [{% for link in site.social.links %}"{{ link }}"{% unless forloop.last %},{% endunless %}{% endfor %}]
+  }
+  </script>
+
   <title>
   {%- unless page.layout == "home" -%}
     {{ page.title | append: " | "}}

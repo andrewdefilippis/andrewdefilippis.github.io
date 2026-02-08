@@ -39,6 +39,7 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
       }
       .site-subtitle {
         margin-left: 0;
+        margin-right: 0;
       }
     }
 
