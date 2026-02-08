@@ -41,18 +41,14 @@
 
 {% endif %}
 
-{% if page.layout == 'home'
-    or page.layout == 'categories'
-    or page.layout == 'post'
-    or page.layout == 'page' %}
-  {% assign type = page.layout %}
-{% elsif page.layout == 'archives'
-    or page.layout == 'category'
-    or page.layout == 'tag' %}
-  {% assign type = "misc" %}
-{% else %}
-  {% assign type = "commons" %}
-{% endif %}
+{% case page.layout %}
+  {% when 'categories', 'post', 'page' %}
+    {% assign type = page.layout %}
+  {% when 'home', 'archives', 'category', 'tag' %}
+    {% assign type = 'misc' %}
+  {% else %}
+    {% assign type = 'commons' %}
+{% endcase %}
 
 {% capture script %}/assets/js/dist/{{ type }}.min.js{% endcapture %}
 <script defer src="{{ script | relative_url }}"></script>
