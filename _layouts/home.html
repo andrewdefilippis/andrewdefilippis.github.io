@@ -57,9 +57,9 @@ layout: page
                 <div style="position: absolute; max-width: 100%; padding: 0">
                     <a href="{{ post.url | relative_url }}">
                         <picture>
-                            <source type="image/avif" srcset="{{avif_path}}" />
-                            <source type="image/webp" srcset="{{webp_path}}" />
-                            <img src="{{png_path}}" srcset="{{png_path}}" width="762" height="400" alt="{{ post.image.alt | default: 'Preview Image' }}" class="post-img">
+                            <source type="image/avif" srcset="{{avif_path}}" sizes="(max-width: 849px) calc(100vw - 2rem), 605px" />
+                            <source type="image/webp" srcset="{{webp_path}}" sizes="(max-width: 849px) calc(100vw - 2rem), 605px" />
+                            <img src="{{png_path}}" width="1200" height="630" alt="{{ post.image.alt | default: 'Preview Image' }}" class="post-img"{% if forloop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
                         </picture>
                     </a>
                 </div>

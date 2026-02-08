@@ -58,7 +58,6 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
     padding: .7rem;
 
     .post-img-cnt{
-      float:top;
       padding:10px 10px 0px 10px;
     }
 
@@ -84,3 +83,20 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
     }
   } // .post-preview
 } // #post-list
+
+/* Dark mode WCAG AA contrast fixes */
+html[data-mode="dark"] {
+  --text-muted-color: #8b949c;
+  --sidebar-muted-color: #908f8e;
+  --label-color: #8b949c;
+  --btn-share-color: #8b949c;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) {
+    --text-muted-color: #8b949c;
+    --sidebar-muted-color: #908f8e;
+    --label-color: #8b949c;
+    --btn-share-color: #8b949c;
+  }
+}

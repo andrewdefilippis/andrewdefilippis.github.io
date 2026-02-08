@@ -47,9 +47,9 @@ tail_includes:
 
     <div class="mt-3 mb-3">
       <picture>
-        <source type="image/avif" srcset="{{avif_path}}" />
-        <source type="image/webp" srcset="{{webp_path}}" />
-        <img src="{{png_path}}" srcset="{{png_path}}" {{ class }} {{ alt }} w="1200" h="630" {{ lqip | strip }}>
+        <source type="image/avif" srcset="{{avif_path}}" sizes="(max-width: 849px) calc(100vw - 2rem), 605px" />
+        <source type="image/webp" srcset="{{webp_path}}" sizes="(max-width: 849px) calc(100vw - 2rem), 605px" />
+        <img src="{{png_path}}" {{ class }} {{ alt }} width="1200" height="630" fetchpriority="high" {{ lqip | strip }}>
       </picture>
       {%- if page.image.alt -%}
         <figcaption class="text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>

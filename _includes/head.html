@@ -75,6 +75,9 @@
 
   {% else %}
 
+    <link rel="preconnect" href="https://content.andrewdefilippis.com" crossorigin>
+    <link rel="dns-prefetch" href="https://content.andrewdefilippis.com">
+
     {% for cdn in site.data.assets[origin].cdns %}
       <link rel="preconnect" href="{{ cdn.url }}" {{ cdn.args }}>
       <link rel="dns-prefetch" href="{{ cdn.url }}" {{ cdn.args }}>
@@ -106,13 +109,14 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="{{ site.data.assets[origin].bootstrap.css | relative_url}}">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ site.data.assets[origin].fontawesome.css | relative_url }}">
+  <!-- Font Awesome (deferred – non-critical) -->
+  <link rel="stylesheet" href="{{ site.data.assets[origin].fontawesome.css | relative_url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ site.data.assets[origin].fontawesome.css | relative_url }}"></noscript>
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
   {% if site.toc and page.toc %}
-    <link rel="stylesheet" href="{{ site.data.assets[origin].bootstrap-toc.css | relative_url }}">
+    <link rel="stylesheet" href="{{ site.data.assets[origin].toc.css | relative_url }}">
   {% endif %}
 
   {% if page.layout == 'page' or page.layout == 'post' %}
@@ -120,9 +124,14 @@
     <link rel="stylesheet" href="{{ site.data.assets[origin].magnific-popup.css | relative_url }}">
   {% endif %}
 
-  <!-- JavaScript -->
-
-  <script src="{{ site.data.assets[origin].jquery.js | relative_url }}"></script>
+  {% if page.layout == 'home' %}
+    {% assign _first_post = site.posts | where_exp: "item", "item.hidden != true" | first %}
+    {% if _first_post.image %}
+      {% assign _fp_fn = _first_post.path | split: "/" | last | split: "." | first %}
+      {% assign _fp_img_prefix = site.img_cdn | append: site.img_cdn_path_prefix | append: _fp_fn | append: "/" | append: _first_post.image %}
+      <link rel="preload" as="image" type="image/avif" href="{{ _fp_img_prefix }}.avif">
+    {% endif %}
+  {% endif %}
 
   {% unless site.theme_mode %}
     {% include mode-toggle.html %}
