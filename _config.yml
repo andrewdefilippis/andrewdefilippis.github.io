@@ -138,10 +138,6 @@ collections:
 
 defaults:
   - scope:
-      path: ''          # An empty string here means all files in the project
-    values:
-      image: '/images/avatar/20230223060800/andrewdefilippis.webp'
-  - scope:
       path: ''
       type: posts
     values:
