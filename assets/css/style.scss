@@ -56,6 +56,27 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 #post-list {
   .post-preview {
     padding: .7rem;
+    position: relative;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      border-color: var(--link-color);
+      box-shadow: 0 0 6px rgba(108, 117, 125, 0.15);
+    }
+
+    h1 a:hover {
+      color: var(--link-color) !important;
+      border-bottom: none;
+    }
+
+    h1 a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
 
     .post-img-cnt{
       padding:10px 10px 0px 10px;
