@@ -140,6 +140,8 @@ html[data-mode="dark"] {
   --btn-share-color: #8b949c;
   --blockquote-text-color: #9ca3af;
   --search-icon-color: #8b949c;
+  --highlighter-rouge-color: #7ea8d6;
+  --inline-code-bg: var(--highlight-bg-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -150,6 +152,8 @@ html[data-mode="dark"] {
     --btn-share-color: #8b949c;
     --blockquote-text-color: #9ca3af;
     --search-icon-color: #8b949c;
+    --highlighter-rouge-color: #7ea8d6;
+    --inline-code-bg: var(--highlight-bg-color);
   }
 }
 
