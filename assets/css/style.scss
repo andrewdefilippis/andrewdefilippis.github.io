@@ -204,6 +204,11 @@ html[data-mode="dark"] {
   color: #b0b8c0;
 }
 
+/* Brighten sidebar title */
+#sidebar .site-title a {
+  color: var(--label-color);
+}
+
 /* WCAG AA focus indicators for keyboard navigation */
 #core-wrapper h2:focus-visible,
 #core-wrapper h3:focus-visible,
