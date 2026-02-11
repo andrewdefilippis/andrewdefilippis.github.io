@@ -1,6 +1,6 @@
 ---
 title: Knowledge and History Gone By
-date: 2026-02-10 07:10:00 +0000
+date: 2026-02-10 17:10:00 +0000
 categories: [Personal, Reflection]
 tags: [knowledge, history, ai, tech, programming, software, systems, development, engineer]
 ---
