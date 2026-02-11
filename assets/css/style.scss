@@ -90,6 +90,8 @@ html[data-mode="dark"] {
   --sidebar-muted-color: #908f8e;
   --label-color: #8b949c;
   --btn-share-color: #8b949c;
+  --blockquote-text-color: #9ca3af;
+  --search-icon-color: #8b949c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -98,5 +100,38 @@ html[data-mode="dark"] {
     --sidebar-muted-color: #908f8e;
     --label-color: #8b949c;
     --btn-share-color: #8b949c;
+    --blockquote-text-color: #9ca3af;
+    --search-icon-color: #8b949c;
   }
+}
+
+/* WCAG AA focus indicators for keyboard navigation */
+#core-wrapper h2:focus-visible,
+#core-wrapper h3:focus-visible,
+#core-wrapper h4:focus-visible,
+#core-wrapper h5:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+#search-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--link-color);
+}
+
+.btn-lang:focus-visible {
+  box-shadow: 0 0 0 2px var(--link-color);
+}
+
+.code-header button:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+/* WCAG AA minimum text size fixes */
+.tooltip-inner {
+  font-size: 0.8rem;
+}
+
+.post-meta {
+  font-size: 0.9rem;
 }
