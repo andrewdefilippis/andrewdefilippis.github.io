@@ -126,6 +126,23 @@ html[data-mode="dark"] {
   }
 }
 
+/* Share icon colors for icons missing from the theme */
+.share-wrapper .share-icons {
+  .fab {
+    &.fa-hacker-news,
+    &.fa-reddit,
+    &.fa-bluesky,
+    &.fa-mastodon,
+    &.fa-x-twitter {
+      color: var(--btn-share-color);
+    }
+  }
+
+  .fas.fa-envelope {
+    color: var(--btn-share-color);
+  }
+}
+
 /* WCAG AA focus indicators for keyboard navigation */
 #core-wrapper h2:focus-visible,
 #core-wrapper h3:focus-visible,
