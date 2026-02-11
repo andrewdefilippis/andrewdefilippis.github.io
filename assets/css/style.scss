@@ -114,6 +114,24 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   } // .post-preview
 } // #post-list
 
+/* Override orange link hover with lighter blue */
+#page-category a:hover,
+#page-tag a:hover,
+.post-tail-wrapper .license-wrapper > a:hover,
+#search-results a:hover,
+#topbar #breadcrumb a:hover,
+.post-content a:not(.img-link):hover,
+.post-meta a:not([class]):hover,
+#access-lastmod a:hover,
+footer a:hover {
+  color: #b0d0ff !important;
+  border-bottom-color: #b0d0ff;
+}
+
+.post-tag:hover {
+  color: #b0d0ff;
+}
+
 /* Dark mode WCAG AA contrast fixes */
 html[data-mode="dark"] {
   --text-muted-color: #8b949c;
