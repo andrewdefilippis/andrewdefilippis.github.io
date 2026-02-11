@@ -17,18 +17,15 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   color: inherit;
 }
 
-/* Align year dots with post dots on archives timeline */
+/* Fix stacked year divs on archives timeline */
 #archives .year {
   clear: both;
 }
 
-#archives .year::after {
-  transform: translateX(-50%);
-}
-
-@media all and (min-width: 768px) {
+/* Firefox renders year dots shifted right — fix only for Firefox */
+@-moz-document url-prefix() {
   #archives .year::after {
-    left: 21.75px;
+    transform: translateX(-50%);
   }
 }
 
