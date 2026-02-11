@@ -1,8 +1,16 @@
 #  The contact options.
 
 -
+  type: orcid
+  icon: 'fab fa-orcid'
+  url:  'https://orcid.org/0009-0009-1829-1583'
+-
   type: github
   icon: 'fab fa-github'
+-
+  type: gitlab
+  icon: 'fab fa-gitlab'
+  url:  'https://gitlab.com/andrewdefilippis'
 -
   type: linkedin
   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
