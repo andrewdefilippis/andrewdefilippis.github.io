@@ -11,6 +11,12 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 
 /* append your custom style below */
 
+/* Custom text selection color */
+::selection {
+  background: rgba(138, 180, 248, 0.2);
+  color: inherit;
+}
+
 /* Align year dots with post dots on archives timeline */
 #archives .year {
   clear: both;
