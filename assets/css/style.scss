@@ -10,6 +10,15 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 @import "{{ site.theme }}";
 
 /* append your custom style below */
+
+/* Avatar hover glow */
+#avatar > a {
+  transition: border-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 12px rgba(138, 180, 248, 0.5);
+  }
+}
 @media all and (min-width: 1650px) {
   #sidebar {
     .profile-wrapper {
