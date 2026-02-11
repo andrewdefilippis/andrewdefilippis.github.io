@@ -148,6 +148,18 @@ html[data-mode="dark"] {
   outline-offset: 2px;
 }
 
+/* Reading progress bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background: rgba(138, 180, 248, 0.5);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
 /* WCAG AA minimum text size fixes */
 .tooltip-inner {
   font-size: 0.8rem;

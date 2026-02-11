@@ -9,6 +9,8 @@ tail_includes:
   - comments
 ---
 
+<div class="reading-progress" aria-hidden="true"></div>
+
 <h1 data-toc-skip>{{ page.title }}</h1>
 
 <div class="post-meta text-muted">
@@ -151,3 +153,15 @@ tail_includes:
   </div><!-- .post-tail-bottom -->
 
 </div><!-- div.post-tail-wrapper -->
+
+<script>
+(function() {
+  var bar = document.querySelector('.reading-progress');
+  if (!bar) return;
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
+  }, { passive: true });
+})();
+</script>
