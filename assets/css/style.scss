@@ -130,6 +130,18 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   } // .post-preview
 } // #post-list
 
+/* Further Reading cards: match homepage hover style */
+#related-posts .card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: none;
+    background-color: var(--card-hovor-bg);
+    border-color: var(--link-color);
+    box-shadow: 0 0 6px rgba(108, 117, 125, 0.15);
+  }
+}
+
 /* Override orange link hover with lighter blue */
 #page-category a:hover,
 #page-tag a:hover,
@@ -210,13 +222,11 @@ html[data-mode="dark"] {
 /* Fade-in on scroll */
 .fade-in {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 
 .fade-in.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* WCAG AA minimum text size fixes */
