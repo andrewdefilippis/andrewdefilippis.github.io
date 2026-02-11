@@ -10,6 +10,33 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 @import "{{ site.theme }}";
 
 /* append your custom style below */
+
+/* Custom text selection color */
+::selection {
+  background: rgba(138, 180, 248, 0.2);
+  color: inherit;
+}
+
+/* Fix stacked year divs on archives timeline */
+#archives .year {
+  clear: both;
+}
+
+/* Firefox renders year dots shifted right — fix only for Firefox */
+@-moz-document url-prefix() {
+  #archives .year::after {
+    transform: translateX(-50%);
+  }
+}
+
+/* Avatar hover glow */
+#avatar > a {
+  transition: border-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 12px rgba(138, 180, 248, 0.5);
+  }
+}
 @media all and (min-width: 1650px) {
   #sidebar {
     .profile-wrapper {
@@ -105,24 +132,70 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   } // .post-preview
 } // #post-list
 
+/* Further Reading cards: match homepage hover style */
+#related-posts .card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: none;
+    background-color: var(--card-hovor-bg);
+    border-color: var(--link-color);
+    box-shadow: 0 0 6px rgba(108, 117, 125, 0.15);
+  }
+}
+
+/* Override orange link hover with lighter blue */
+#page-category a:hover,
+#page-tag a:hover,
+.post-tail-wrapper .license-wrapper > a:hover,
+#search-results a:hover,
+#topbar #breadcrumb a:hover,
+.post-content a:not(.img-link):hover,
+.post-meta a:not([class]):hover,
+#access-lastmod a:hover,
+footer a:hover {
+  color: #b0d0ff !important;
+  border-bottom-color: #b0d0ff;
+}
+
+.post-tag:hover {
+  color: #b0d0ff;
+}
+
 /* Dark mode WCAG AA contrast fixes */
 html[data-mode="dark"] {
-  --text-muted-color: #8b949c;
-  --sidebar-muted-color: #908f8e;
-  --label-color: #8b949c;
-  --btn-share-color: #8b949c;
-  --blockquote-text-color: #9ca3af;
-  --search-icon-color: #8b949c;
+  --text-color: #dfdfdf;
+  --heading-color: #efefef;
+  --post-list-text-color: #dfdfdf;
+  --text-muted-color: #b0b8c0;
+  --sidebar-muted-color: #b0afae;
+  --sidebar-active-color: rgba(255, 255, 255, 0.95);
+  --label-color: #b0b8c0;
+  --btn-share-color: #b0b8c0;
+  --btn-share-hover-color: #dfdfdf;
+  --blockquote-text-color: #c0c8d0;
+  --search-icon-color: #b0b8c0;
+  --relate-post-date: #b0b8c0;
+  --highlighter-rouge-color: #7ea8d6;
+  --inline-code-bg: var(--highlight-bg-color);
 }
 
 @media (prefers-color-scheme: dark) {
   html:not([data-mode]) {
-    --text-muted-color: #8b949c;
-    --sidebar-muted-color: #908f8e;
-    --label-color: #8b949c;
-    --btn-share-color: #8b949c;
-    --blockquote-text-color: #9ca3af;
-    --search-icon-color: #8b949c;
+    --text-color: #dfdfdf;
+    --heading-color: #efefef;
+    --post-list-text-color: #dfdfdf;
+    --text-muted-color: #b0b8c0;
+    --sidebar-muted-color: #b0afae;
+    --sidebar-active-color: rgba(255, 255, 255, 0.95);
+    --label-color: #b0b8c0;
+    --btn-share-color: #b0b8c0;
+    --btn-share-hover-color: #dfdfdf;
+    --blockquote-text-color: #c0c8d0;
+    --search-icon-color: #b0b8c0;
+    --relate-post-date: #b0b8c0;
+    --highlighter-rouge-color: #7ea8d6;
+    --inline-code-bg: var(--highlight-bg-color);
   }
 }
 
@@ -141,6 +214,16 @@ html[data-mode="dark"] {
   .fas.fa-envelope {
     color: var(--btn-share-color);
   }
+}
+
+/* Brighten breadcrumb text */
+#topbar #breadcrumb {
+  color: #b0b8c0;
+}
+
+/* Brighten sidebar title */
+#sidebar .site-title a {
+  color: var(--label-color);
 }
 
 /* WCAG AA focus indicators for keyboard navigation */
@@ -180,13 +263,11 @@ html[data-mode="dark"] {
 /* Fade-in on scroll */
 .fade-in {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 
 .fade-in.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* WCAG AA minimum text size fixes */
