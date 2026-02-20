@@ -2,10 +2,18 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/jekyll
 
 {
-	"name": "Jekyll",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/jekyll:2-bookworm",
-	"features": {
-		"ghcr.io/devcontainers-extra/features/claude-code:1": {}
-	}
+    "name": "andrewdefilippis.github.io",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "image": "mcr.microsoft.com/devcontainers/jekyll",
+    "features": {
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+    },
+    "mounts": [
+        "source=claude-code-config-${devcontainerId},target=/home/vscode/.claude,type=volume",
+        "readonly,source=${localEnv:HOME}/.claude/CLAUDE.md,target=/home/vscode/.claude/CLAUDE.md,type=bind",
+        "readonly,source=${localEnv:HOME}/.claude/commands,target=/home/vscode/.claude/commands,type=bind",
+        "readonly,source=${localEnv:HOME}/.claude/agents,target=/home/vscode/.claude/agents,type=bind"
+    ],
+    "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.claude || true",
+    "postStartCommand": "sudo env PATH=\"$PATH\" claude update"
 }
