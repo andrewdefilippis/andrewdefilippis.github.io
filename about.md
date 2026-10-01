@@ -1,11 +1,10 @@
 ---
 title: About
-icon: fas fa-info-circle
-order: 4
+# Small capital section labels, like the resume and projects pages.
+labeled: true
+description: The story of my career so far, from computer technician to systems development engineer at AWS, and life outside of work.
 ---
-{%- assign my = site.data.andrewdefilippis.Personal -%}
-
-Hey there, I'm {{ site.social.name }}, a software engineer based in {{ my.Location }}.
+Hey there, I'm {{ site.data.profile.name }}, a software engineer based in {{ site.data.profile.location }}.
 
 ## What I Do
 
@@ -15,29 +14,29 @@ I'm currently exploring new opportunities where I can bring my experience in clo
 
 ## Career
 
-### Amazon Web Services, 11 years
+### Amazon Web Services <span>2014 to 2026</span>
 
-My AWS career spanned support, systems engineering, and systems development across some of AWS's most critical services.
+My 11-year AWS career spanned support, systems engineering, and systems development across some of AWS's most critical services.
 
-#### CloudWatch Logs & Observability Admin (2021-2026)
+#### CloudWatch Logs & Observability Admin <span>2021 to 2026</span>
 
 As a Systems Development Engineer II, I led infrastructure-as-code design using TypeScript and AWS CDK for CloudWatch Observability Admin (Telemetry Config & Remediation), building reusable CDK patterns across 50+ service packages and 30+ pipelines. I spearheaded automated region expansion supporting 17 new region builds, developed a donor region build process that let CloudWatch Logs launch in new regions ahead of its dependencies, and owned end-to-end CI/CD pipeline modernization from legacy Ruby templates to centralized TypeScript CDK-managed pipelines.
 
 On the AI front, I pioneered AI-augmented development and operations by designing an internal Rust Model Context Protocol (MCP) Server that enabled AI agents to securely interact with AWS services, and created the AI MetaRepo, a unified workspace enabling cross-package AI context awareness across frontend, backend, infrastructure, and test modules. I also built AI-powered operational tooling that let engineers run plain-English queries to automate log investigations across multiple accounts.
 
-#### API Gateway (2017-2021)
+#### API Gateway <span>2017 to 2021</span>
 
-I led the deployment and launch of API Gateway into 14 new AWS Regions and spearheaded expansion into 3 Amazon Dedicated Cloud environments for US and European Government (Secret/Top Secret), operating under strict air-gapped conditions with no direct monitoring. I co-owned the region build roadmap as both Systems Engineer and de facto Technical Program Manager, automated critical portions of the region build runbook using Python and templating tools, and improved service reliability by migrating API Gateway's EC2 fleet to Launch Templates and Mixed Instance Groups.
+I led the deployment and launch of API Gateway into 14 new AWS Regions and spearheaded expansion into 3 Amazon Dedicated Cloud environments for US and European Government (Secret/Top Secret), operating under strict air-gapped conditions with no direct monitoring. I owned the region builds end to end as both project manager and engineer: I planned and coordinated the work across 4 teams, then built, deployed, and launched the service in each new region. I also automated critical portions of the region build runbook using Python and templating tools, and improved service reliability by migrating API Gateway's EC2 fleet to Launch Templates and Mixed Instance Groups.
 
-#### Lambda (2017-2018)
+#### Lambda <span>2017 to 2018</span>
 
 Served as a dedicated API Gateway region builder and systems engineer on a shared systems engineering team for API Gateway and Lambda, collaborating across services on build processes and automation.
 
-#### Premium Support (2014-2017)
+#### Premium Support <span>2014 to 2017</span>
 
 I started at AWS as a Cloud Support Associate on the Linux team, and quickly moved into application services where I became the single-threaded owner in Seattle for API Gateway support from its public GA launch in July 2015. I grew into the Global Lead Support Engineer and first Subject Matter Expert for API Gateway, led talent development for peer engineers globally, developed internal training modules and public-facing documentation, and traveled internationally, including Taipei, Taiwan, for on-site customer support and engineer training.
 
-### Before AWS
+### Before AWS <span>2007 to 2014</span>
 
 I got my start in tech through hands-on roles: as a Computer Technician at Washington State University, an IT Intern at Clover Park Technical College where I built a Snort IDS and configured centralized log management, a Technical Support Engineer and Junior Systems/Network Administrator at ReachONE Internet managing Linux, Windows, and Cisco infrastructure, and a Service Desk Specialist at MultiCare Health System supporting healthcare IT systems.
 
@@ -47,4 +46,4 @@ I'm a husband and father first. When I'm not working, you'll usually find me spe
 
 ## Get in Touch
 
-I'm always happy to connect, whether it's about a potential opportunity, a collaboration, or just talking tech. You can find me on [GitHub](https://github.com/andrewdefilippis) or [LinkedIn](https://www.linkedin.com/in/andrewdefilippis).
+I'm always happy to connect, whether it's about a potential opportunity, a collaboration, or just talking tech. You can find me on [LinkedIn](https://www.linkedin.com/in/andrewdefilippis) or [GitHub](https://github.com/andrewdefilippis).{% if site.data.profile.email != "" %} Or [email me](mailto:{{ site.data.profile.email }}).{% endif %}

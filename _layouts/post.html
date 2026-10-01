@@ -1,167 +1,48 @@
 ---
-layout: page
-refactor: true
-panel_includes:
-  - toc
-tail_includes:
-  - related-posts
-  - post-nav
-  - comments
+layout: default
 ---
+{%- assign minutes = content | number_of_words | divided_by: 200 | at_least: 1 -%}
+<article class="prose">
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {%- if page.last_modified_at %}
+      · Updated <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%B %-d, %Y" }}</time>
+      {%- endif %}
+      · {{ minutes }} min read
+    </p>
+  </header>
 
-<div class="reading-progress" aria-hidden="true"></div>
+  {%- if page.image %}
+  <figure class="post-image">
+    {% include post-image.html post=page priority=true %}
+  </figure>
+  {%- endif %}
 
-<h1 data-toc-skip>{{ page.title }}</h1>
-
-<div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      {{ site.data.locales[site.lang].post.posted }}
-      {% include datetime.html date=page.date tooltip=true %}
-    </span>
-
-    <!-- lastmod date -->
-    {% if page.last_modified_at %}
-    <span>
-      {{ site.data.locales[site.lang].post.updated }}
-      {% include datetime.html date=page.last_modified_at tooltip=true %}
-    </span>
-    {% endif %}
-
-  {% if page.image %}
-    {% assign page_fn_no_ext = page.path | split: "/" | last | split: "." | first %}
-    {% assign page_image = page.image %}
-    {% assign image_path_prefix = site.img_cdn | append: site.img_cdn_path_prefix | append: page_fn_no_ext | append: "/" | append: page_image %}
-    {% assign jpg_path = image_path_prefix | append: '.jpg' %}
-    {% assign png_path = image_path_prefix | append: '.png' %}
-    {% assign avif_path = image_path_prefix | append: '.avif' %}
-    {% assign webp_path = image_path_prefix | append: '.webp' %}
-
-    {% capture src %}src="{{ page.image.path | default: page.image }}"{% endcapture %}
-    {% capture class %}class="preview-img{% if page.image.no_bg %}{{ ' no-bg' }}{% endif %}"{% endcapture %}
-    {% capture alt %}alt="{{ page.image.alt | default: "Preview Image" }}"{% endcapture %}
-
-    {% capture lqip %}
-      {% if page.image.lqip %}
-        lqip="{{ page.image.lqip }}"
-      {% endif %}
-    {% endcapture %}
-
-    <div class="mt-3 mb-3">
-      <picture>
-        <source type="image/avif" srcset="{{avif_path}}" sizes="(max-width: 849px) calc(100vw - 2rem), 605px" />
-        <source type="image/webp" srcset="{{webp_path}}" sizes="(max-width: 849px) calc(100vw - 2rem), 605px" />
-        <img src="{{png_path}}" {{ class }} {{ alt }} width="1200" height="630" fetchpriority="high" {{ lqip | strip }}>
-      </picture>
-      {%- if page.image.alt -%}
-        <figcaption class="text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>
-      {%- endif -%}
-    </div>
-  {% endif %}
-
-  <div class="d-flex justify-content-between">
-    <!-- author(s) -->
-    <span>
-      {% if page.author %}
-        {% assign authors = page.author %}
-      {% elsif page.authors %}
-        {% assign authors = page.authors %}
-      {% endif %}
-
-      {{ site.data.locales[site.lang].post.written_by }}
-
-      <em>
-      {% if authors %}
-        {% for author in authors %}
-          <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
-          {% unless forloop.last %}</em>, <em>{% endunless %}
-        {% endfor %}
-      {% else %}
-        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
-      {% endif %}
-      </em>
-    </span>
-
-    <div>
-      <!-- page views -->
-      {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
-      <span>
-        <em id="pv" class="pageviews">
-          <i class="fas fa-spinner fa-spin fa-fw"></i>
-        </em>
-        {{ site.data.locales[site.lang].post.pageview_measure }}
-      </span>
-      {% endif %}
-
-      <!-- read time -->
-      {% include read-time.html content=content prompt=true %}
-    </div>
-
-  </div> <!-- .d-flex -->
-
-</div> <!-- .post-meta -->
-
-<div class="post-content">
   {{ content }}
-</div>
 
-<div class="post-tail-wrapper text-muted">
+  <footer class="post-footer">
+    {%- if page.tags.size > 0 %}
+    <p class="meta">Tagged:</p>
+    <ul class="tags">
+      {%- for tag in page.tags %}<li><a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a></li>{% endfor %}
+    </ul>
+    {%- endif %}
 
-  <!-- categories -->
-  {% if page.categories.size > 0 %}
-  <div class="post-meta mb-3">
-    <i class="far fa-folder-open fa-fw mr-1"></i>
-    {% for category in page.categories %}
-      <a href='{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/'>{{ category }}</a>
-      {%- unless forloop.last -%}, {%- endunless -%}
-    {% endfor %}
-  </div>
-  {% endif %}
+    <aside class="author-note">
+      <p>
+        Written by <a href="{{ '/about/' | relative_url }}">{{ site.data.profile.name }}</a>.
+      </p>
+    </aside>
 
-  <!-- tags -->
-  {% if page.tags.size > 0 %}
-  <div class="post-tags">
-    <i class="fa fa-tags fa-fw mr-1"></i>
-      {% for tag in page.tags %}
-      <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
-          class="post-tag no-text-decoration" >
-        {{- tag -}}
-      </a>
-      {% endfor %}
-  </div>
-  {% endif %}
-
-  <div class="post-tail-bottom
-    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
-    <div class="license-wrapper">
-
-      {% if site.data.locales[site.lang].copyright.license.template %}
-
-        {% capture _replacement %}
-        <a href="{{ site.data.locales[site.lang].copyright.license.link }}">
-          {{ site.data.locales[site.lang].copyright.license.name }}
-        </a>
-        {% endcapture %}
-
-        {{ site.data.locales[site.lang].copyright.license.template | replace: ':LICENSE_NAME', _replacement }}
-
-      {% endif %}
-    </div>
-
-    {% include post-sharing.html %}
-
-  </div><!-- .post-tail-bottom -->
-
-</div><!-- div.post-tail-wrapper -->
-
-<script>
-(function() {
-  var bar = document.querySelector('.reading-progress');
-  if (!bar) return;
-  window.addEventListener('scroll', function() {
-    var scrollTop = window.scrollY;
-    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
-  }, { passive: true });
-})();
-</script>
+    <nav class="post-nav" aria-label="More posts">
+      {%- if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" rel="prev"><span>Older</span>{{ page.previous.title }}</a>
+      {%- endif %}
+      {%- if page.next %}
+      <a href="{{ page.next.url | relative_url }}" rel="next"><span>Newer</span>{{ page.next.title }}</a>
+      {%- endif %}
+    </nav>
+  </footer>
+</article>

@@ -1,0 +1,18 @@
+---
+title: Tags
+description: Posts by Andrew DeFilippis, grouped by topic.
+layout: default
+---
+{%- assign tags = site.tags | sort -%}
+<h1>Tags</h1>
+<ul class="tags">
+  {%- for tag in tags %}<li><a href="#{{ tag[0] | slugify }}">{{ tag[0] }} <span class="count">{{ tag[1].size }}</span></a></li>{% endfor %}
+</ul>
+
+{%- for tag in tags %}
+<section class="labeled" aria-labelledby="{{ tag[0] | slugify }}">
+  <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+  {%- assign tag_posts = tag[1] %}
+  {% include post-list.html posts=tag_posts %}
+</section>
+{%- endfor %}

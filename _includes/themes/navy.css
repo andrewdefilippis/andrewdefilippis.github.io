@@ -1,0 +1,47 @@
+/* Color theme. Pick one with `color_theme` in _config.yml. */
+:root {
+  color-scheme: light dark;
+
+  /* Navy: Warm paper with a deep navy accent; dark mode is navy-black with steel-blue links. */
+  --bg: #f5f3ee;
+  --surface: #ebe8e0;
+  --text: #161a22;
+  --muted: #575d69;
+  --border: #d9d5ca;
+  --accent: #1c3d70;
+  --accent-fill: #1c3d70;
+  --accent-text: #f5f3ee;
+  --danger: #a3271f;
+  --warning: #8a6100;
+  --info: #2f6672;
+  --tip: #4d6b26;
+
+  --code-comment: #6f6a62;
+  --code-keyword: #8a3a5c;
+  --code-string: #4d6b26;
+  --code-number: #2f6672;
+  --code-function: #8a6100;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e131c;
+    --surface: #161c27;
+    --text: #e2e6ee;
+    --muted: #98a1b0;
+    --border: #273042;
+    --accent: #93b8e8;
+    --accent-fill: #2c5596;
+    --accent-text: #ffffff;
+    --danger: #f2786b;
+    --warning: #d9a93f;
+    --info: #7fb3bd;
+    --tip: #a3c26b;
+
+    --code-comment: #8f8a80;
+    --code-keyword: #e39ab8;
+    --code-string: #b4cf7d;
+    --code-number: #8cc1ca;
+    --code-function: #e0b25a;
+  }
+}

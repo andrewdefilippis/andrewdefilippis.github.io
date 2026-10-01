@@ -1,0 +1,29 @@
+---
+title: Projects
+description: Things Andrew DeFilippis has built, at AWS and on his own. Infrastructure as code, region expansion, AI tooling, and open-source side projects.
+layout: default
+wide: true
+---
+<h1>Projects</h1>
+<p class="lede">What I've built and what it achieved.</p>
+
+<section class="labeled" aria-labelledby="at-work">
+  <h2 id="at-work">At work</h2>
+  <div class="cards">
+    {%- assign work = site.data.projects | where: "group", "work" %}
+    {%- for project in work %}
+    {% include project-card.html project=project details=true %}
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="labeled" aria-labelledby="personal">
+  <h2 id="personal">On my own</h2>
+  <div class="cards">
+    {%- assign personal = site.data.projects | where: "group", "personal" %}
+    {%- for project in personal %}
+    {% include project-card.html project=project details=true %}
+    {%- endfor %}
+  </div>
+  <p>More on <a href="https://github.com/andrewdefilippis">GitHub</a>.</p>
+</section>

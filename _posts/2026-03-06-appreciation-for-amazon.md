@@ -12,7 +12,7 @@ My early years in AWS Premium Support showed me bliss.  Leaving a dull end-user 
 
 My manager at the time, Dev, gave me an opportunity that elevated my work at AWS.  He wanted me to lead support for Amazon API Gateway, being released at re:Invent only a couple months ahead.  Embedding myself in the service, understanding it, helping support it, allowed me to become the first Subject Matter Expert, globally, for API Gateway.
 
-As my first leadership role at AWS, it was exiting, but also daunting.  I had the responsibility to support the service, and support engineers of the service.  I had to grow the team.  I couldn't be the only SME.
+As my first leadership role at AWS, it was exciting, but also daunting.  I had the responsibility to support the service, and support engineers of the service.  I had to grow the team.  I couldn't be the only SME.
 
 I worked on writing content for Support Engineers to use and learn from.  Collaborated with the API Gateway service team to develop training materials and correct deficiencies in the service.  Directly supported enterprise customers.  Traveled to Taipei, for on-site support.  Traveled to Dallas for on-site hiring.  It was constantly evolving, and I was enjoying it.
 
@@ -24,19 +24,19 @@ As a Systems Engineer in a small team called Lambda Crowbar, myself and other Sy
 
 The region expansion work was new and exciting.  With most actions being manual, builds were long-running and prone to errors.  We had deployment and scalability problems to solve.  Although disguised in this title, I was now working partially as a software engineer, and partially as a systems administrator.
 
-The Lambda Crowbar team was relatively short-lived.  As would regularly happen at AWS, my manager left the team, which led to the breakup and redistribution of myself and my peers.  I naturally landed in the API Gateway service team.
+The Lambda Crowbar team was relatively short-lived.  As often happens at AWS, my manager moved on, and the team was split up and redistributed.  I naturally landed in the API Gateway service team.
 
-As a Systems Engineer on a team of all Software Development Engineers, my experience was, interesting.  My manager was not familiar with how to manage Systems Engineers, and was not the best at helping me to grow.  There was a huge expectation on me to lead and grow myself, and I was unfamiliar with the team dynamics.
+As a Systems Engineer on a team of Software Development Engineers, I was the odd one out.  Systems Engineering was new to my manager, so much of my growth was up to me.  I learned to lead and grow myself, and to find my place in the team's dynamics.
 
 My experience in API Gateway was like riding a rollercoaster.  There were great times, good times, and suddenly the worst of times.  Not to mention the whole COVID 19 pandemic that forced us to work from home while trying to maintain our plan and schedule.
 
-Although I led region builds and expansion on the team, I struggled to find a path to promotion.  My managers were unfamiliar with Systems Engineering, and the path to Software Developer was complicated through constant manager churn.
+Although I led region builds and expansion on the team, the path to promotion wasn't clear for a Systems Engineer on my team, and several changes in management made it harder to build my case.  It taught me to own my career path, and it led to my next move.
 
 I eventually decided to leave API Gateway for a Systems Development Engineer team in CloudWatch Logs.  The hiring manager, Brooks, was an absolutely fantastic manager.  Although a short tenure as my manager, he helped me to become a Systems Development Engineer, and to grow more into software development.
 
-My time on the CloudWatch Logs Lincoln team was again fun and exciting.  I had the chance to work with fellow Systems Development Engineers, and continue doing region build work.  This eventually soured as I grew tired of the repeated region build mistakes and manual work, and I pivoted to the CloudWatch Logs Sycamore team.
+My time on the CloudWatch Logs Lincoln team was again fun and exciting.  I had the chance to work with fellow Systems Development Engineers, and continue doing region build work.  After a while, I wanted to spend less time building regions and more time building software, so I pivoted to the CloudWatch Logs Sycamore team.
 
-Sycamore was my chance to grow more into software development, and I executed on it.  As the engineer with the most internal infrastructure and deployment knowledge, I took on writing the code for Observability Admin infrastructure.  Without prior knowledge of TypeScript and AWS CDK, I jumped in, and began building out our common CDK constructs package, individual service packages, and centralizing as much of the common configuration as possible.  My experience and hatred of repeat manual work led to our service being rapidly deployable, with minor manual workarounds for automation gaps.
+On Sycamore, I got to do exactly that, and I made the most of it.  As the engineer with the most internal infrastructure and deployment knowledge, I took on writing the code for Observability Admin infrastructure.  Without prior knowledge of TypeScript and AWS CDK, I jumped in, and began building out our common CDK constructs package, individual service packages, and centralizing as much of the common configuration as possible.  My experience and hatred of repeat manual work led to our service being rapidly deployable, with minor manual workarounds for automation gaps.
 
 I enjoyed very much leading infrastructure as code for my team, and mentoring my team on implementing automation over manual tasks.
 

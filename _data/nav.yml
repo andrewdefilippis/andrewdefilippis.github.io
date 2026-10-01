@@ -1,0 +1,11 @@
+# Main menu, in order.
+- title: About
+  url: /about/
+- title: Resume
+  url: /resume/
+- title: Projects
+  url: /projects/
+- title: Gallery
+  url: /gallery/
+- title: Writing
+  url: /posts/

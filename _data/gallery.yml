@@ -1,0 +1,16 @@
+# Photos for /gallery/.
+# While this list is empty, the Gallery page and its menu link are left out of the site.
+# Add your first photo and both appear on the next build.
+#
+# Each photo:
+#   src: full-size image URL
+#   thumb: (optional) smaller image for the grid; defaults to src
+#   alt: what is in the photo, for screen readers
+#   caption: (optional) shown under the photo
+#
+# Example (remove the leading "# " to use it):
+#
+# - src: https://content.andrewdefilippis.com/images/gallery/example.webp
+#   thumb: https://content.andrewdefilippis.com/images/gallery/example-thumb.webp
+#   alt: Sunset over Puget Sound from the Narrows Bridge
+#   caption: Tacoma Narrows, 2026

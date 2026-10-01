@@ -1,0 +1,106 @@
+# Portfolio entries. `featured: true` also shows the project on the home page.
+# `group` is either "work" (built for an employer) or "personal".
+# `org` is the employer, shown under the title of work projects.
+# `label` says what a personal project is, shown under its title instead.
+
+- name: Rust MCP server for CloudWatch Logs
+  group: work
+  org: Amazon Web Services
+  featured: true
+  summary: >-
+    An internal Model Context Protocol (MCP) server that lets AI agents look up and run
+    sensitive operational commands without exposing credentials.
+  details:
+    - Pulls time-ranged log data and system state from multiple AWS accounts and services.
+    - Interprets logs, works out the root cause, and suggests mitigations.
+    - Built to run the team's routine operations work automatically.
+    - Cut triage time from about 30 minutes to about 15, with no clicking through the console account by account.
+    - Designed and built for the CloudWatch Logs Sycamore team.
+  tech: [Rust, MCP, AI agents, CloudWatch Logs]
+
+- name: AI MetaRepo
+  group: work
+  org: Amazon Web Services
+  summary: >-
+    A "metarepo" that gathers every package behind a service into one VS Code workspace, so AI agents
+    can search and reason across the whole service instead of one package and pipeline at a time.
+  details:
+    - "Each package stays its own Git repository inside the workspace, with its own history and commits."
+    - "An AI agent role retrieves packages on request, by pipeline, package name, or name prefix, and adds them to the workspace."
+    - "One semantic search covers all 50+ packages: TypeScript AWS CDK infrastructure, pipeline and test automation, and the service's schemas and business logic."
+  tech: [AI agents, VS Code, Git, Semantic search]
+
+- name: Shared CDK constructs and pipeline modernization
+  group: work
+  org: Amazon Web Services
+  summary: >-
+    Infrastructure as code (IaC) design for CloudWatch Observability Admin, written in TypeScript with the AWS CDK.
+  details:
+    - Reusable constructs adopted across 50+ packages and 30+ pipelines.
+    - Moved pipelines from legacy Ruby templates to centrally managed CDK pipelines, which reduced drift and simplified pipeline creation and management.
+    - Mentored engineers on CDK patterns and led infrastructure design reviews.
+  tech: [TypeScript, AWS CDK, CloudFormation, CI/CD]
+
+- name: Automated region expansion
+  group: work
+  org: Amazon Web Services
+  summary: >-
+    Automation that brings CloudWatch Observability Admin up in new AWS Regions.
+  details:
+    - Cut per-region setup from days to hours, across 17 region builds.
+    - Co-designed the "donor region" process that launched CloudWatch Logs in new regions between 4 and 6 weeks before its dependencies were ready.
+  tech: [AWS CDK, Automation]
+
+- name: API Gateway region launches
+  group: work
+  org: Amazon Web Services
+  featured: true
+  summary: >-
+    Led API Gateway launches in 14 new AWS Regions and 3 Amazon Dedicated Cloud regions,
+    including air-gapped government regions.
+  details:
+    - Automated the region build runbook with Python, Jinja, and ERB templates, saving 2 weeks per region.
+    - "Owned API Gateway region builds end to end as both project manager and engineer: planned and coordinated the work across 4 teams, then built, deployed, and launched the service in each new region."
+  tech: [Python, Jinja, ERB, EC2, Auto Scaling]
+
+- name: my-school-menus
+  group: personal
+  label: Open source · Python package on PyPI
+  featured: true
+  url: https://github.com/andrewdefilippis/my-school-menus
+  summary: >-
+    A command-line tool that turns school breakfast and lunch menus into calendar feeds
+    you can subscribe to in Apple Calendar, Google Calendar, or Home Assistant.
+  details:
+    - Stable event IDs, so refreshing a feed updates events instead of making duplicates.
+    - Looks up the current menu each run, so nothing breaks when the school year changes.
+    - A nightly GitHub Actions job rebuilds the feeds and publishes them to a secret Gist, updating only the files that changed, so subscribed calendars stay current on their own.
+    - The nightly job hides school IDs and error details from its build logs, which are public.
+    - Published on PyPI by a release workflow that tests, builds, and signs each release with Sigstore so anyone can verify it.
+  tech: [Python, iCalendar, CLI, GitHub Actions, PyPI]
+
+- name: PAX-RTP-Index
+  group: personal
+  label: Public dataset
+  url: https://github.com/andrewdefilippis/PAX-RTP-Index
+  summary: >-
+    Machine-readable autocross (SCCA Solo) PAX/RTP index data, from 1998 to today, as JSON, YAML, and CSV.
+  details:
+    - A weekly GitHub Actions job checks the source and opens a pull request when values change.
+    - JSON Schemas, class history (renames and splits), and a source citation for every year.
+  tech: [Python, GitHub Actions, JSON Schema, Data]
+
+- name: andrewdefilippis.com
+  group: personal
+  label: Open source · Website
+  url: https://github.com/andrewdefilippis/andrewdefilippis.github.io
+  summary: >-
+    This website: my portfolio, resume, and blog. A static site built with Jekyll and
+    published to GitHub Pages.
+  details:
+    - Plain HTML and one small stylesheet, so pages load fast and work in any browser.
+    - Content lives in Markdown and YAML data files, so most updates don't touch the page templates.
+    - Light and dark modes follow the visitor's system setting, with readable contrast in both.
+    - The resume page prints straight to a clean PDF.
+    - Every change is built and link-checked by GitHub Actions before it goes live.
+  tech: [Jekyll, HTML, CSS, GitHub Actions, GitHub Pages]
