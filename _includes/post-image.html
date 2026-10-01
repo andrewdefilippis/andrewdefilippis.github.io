@@ -1,0 +1,11 @@
+{%- comment -%}
+  Renders a post's header image from the image server.
+  Usage: {% include post-image.html post=post priority=true %}
+{%- endcomment -%}
+{%- assign post_dir = include.post.path | split: "/" | last | split: "." | first -%}
+{%- assign base = site.post_images | append: post_dir | append: "/" | append: include.post.image -%}
+<picture>
+  <source type="image/avif" srcset="{{ base }}.avif">
+  <source type="image/webp" srcset="{{ base }}.webp">
+  <img src="{{ base }}.png" alt="{{ include.alt | default: '' }}" width="1200" height="630"{% if include.priority %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+</picture>

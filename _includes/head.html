@@ -1,139 +1,55 @@
-<!--
-  The Head
--->
+{%- assign me = site.data.profile -%}
+{%- if page.url == "/" -%}
+  {%- assign page_title = me.name | append: " · " | append: me.headline -%}
+{%- else -%}
+  {%- assign page_title = page.title | append: " · " | append: me.name -%}
+{%- endif -%}
+{%- assign description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 200 -%}
+{%- if page.image and page.collection == "posts" -%}
+  {%- assign post_dir = page.path | split: "/" | last | split: "." | first -%}
+  {%- assign share_image = site.post_images | append: post_dir | append: "/" | append: page.image | append: ".png" -%}
+{%- else -%}
+  {%- assign share_image = me.avatar | replace: ".webp", ".png" -%}
+{%- endif -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ description | escape }}">
+<meta name="author" content="{{ me.name }}">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="alternate" type="application/atom+xml" title="{{ me.name }}: Writing" href="{{ '/feed.xml' | relative_url }}">
+<link rel="icon" href="{{ '/assets/img/favicons/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicons/favicon-32x32.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/img/favicons/apple-touch-icon.png' | relative_url }}">
+{%- if site.google_site_verification %}
+<meta name="google-site-verification" content="{{ site.google_site_verification }}">
+{%- endif %}
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Link previews (LinkedIn, Slack, Mastodon, etc.) -->
+<meta property="og:site_name" content="{{ me.name }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ share_image }}">
+<meta property="og:image:alt" content="{% if page.image and page.collection == "posts" %}Header image for {{ page.title | escape }}{% else %}Photo of {{ me.name }}{% endif %}">
+{%- if page.collection == "posts" %}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{%- else %}
+<meta property="og:type" content="profile">
+<meta property="profile:first_name" content="{{ me.name | split: ' ' | first }}">
+<meta property="profile:last_name" content="{{ me.name | split: ' ' | last }}">
+{%- endif %}
+{%- comment %} Post header images are wide (1200x630); the profile photo is square. {% endcomment %}
+<meta name="twitter:card" content="{% if page.image and page.collection == "posts" %}summary_large_image{% else %}summary{% endif %}">
 
-  {% if page.layout == 'home' or page.layout == 'post' %}
-
-    {% if site.google_analytics.pv.proxy_endpoint %}
-      <meta name="pv-proxy-endpoint" content="{{ site.google_analytics.pv.proxy_endpoint }}">
-    {% endif %}
-
-    {% if site.google_analytics.pv.cache_path %}
-      <meta name="pv-cache-path" content="{{ site.google_analytics.pv.cache_path | relative_url }}">
-    {% endif %}
-
-  {% endif %}
-
-  {% capture seo_tags %}
-    {% seo title=false %}
-  {% endcapture %}
-
-  {% if page.image %}
-    {% assign img = page.image.path | default: page.image %}
-
-    {% unless img contains '://' %}
-      {% assign img_path = page.img_path | append: '/' | append: img | replace: '//', '/' %}
-      {% capture target %}"{{ img | absolute_url }}"{% endcapture %}
-
-      {% if site.img_cdn contains '//' %}
-        <!-- it's a cross-origin URL -->
-        {% capture replacement %}"{{ site.img_cdn }}{{ img_path }}"{% endcapture %}
-      {% else %}
-        <!-- it's a local file path -->
-        {%- capture replacement -%}
-          "{{ site.img_cdn | append: '/' | append: img_path | replace: '//', '/' | absolute_url }}"
-        {%- endcapture -%}
-      {% endif %}
-
-      {% assign seo_tags = seo_tags | replace: target, replacement %}
-
-    {% endunless %}
-
-  {% endif %}
-
-  {{ seo_tags }}
-
-  {% assign avatar_url = site.img_cdn | append: site.avatar %}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "{{ site.social.name }}",
-    "url": "{{ site.url }}",
-    "image": "{{ avatar_url }}",
-    "jobTitle": "Software Engineer",
-    "sameAs": [{% for link in site.social.links %}"{{ link }}"{% unless forloop.last %},{% endunless %}{% endfor %}]
-  }
-  </script>
-
-  <title>
-  {%- unless page.layout == "home" -%}
-    {{ page.title | append: " | "}}
-  {%- endunless -%}
-    {{ site.title }}
-  </title>
-
-  {% include favicons.html %}
-
-  {% if site.resources.ignore_env != jekyll.environment and site.resources.self_hosted %}
-
-    <link href="{{ site.data.assets[origin].webfonts | relative_url }}" rel="stylesheet">
-
-  {% else %}
-
-    <link rel="preconnect" href="https://content.andrewdefilippis.com" crossorigin>
-    <link rel="dns-prefetch" href="https://content.andrewdefilippis.com">
-
-    {% for cdn in site.data.assets[origin].cdns %}
-      <link rel="preconnect" href="{{ cdn.url }}" {{ cdn.args }}>
-      <link rel="dns-prefetch" href="{{ cdn.url }}" {{ cdn.args }}>
-    {% endfor %}
-
-    <link rel="stylesheet" href="{{ site.data.assets[origin].webfonts | relative_url }}">
-
-  {% endif %}
-
-  <!-- GA -->
-  {% if jekyll.environment == 'production'
-      and site.google_analytics.id != empty and site.google_analytics.id %}
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-    {% if site.google_analytics.pv.proxy_endpoint %}
-      {% assign proxy_url = site.google_analytics.pv.proxy_endpoint
-          | replace: "https://", "" | split: "/" | first | prepend: "https://" %}
-      <link rel="preconnect" href="{{ proxy_url }}" crossorigin="use-credentials">
-      <link rel="dns-prefetch" href="{{ proxy_url }}">
-    {% endif %}
-
-    {% include google-analytics.html %}
-  {% endif %}
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="{{ site.data.assets[origin].bootstrap.css | relative_url}}">
-
-  <!-- Font Awesome (deferred – non-critical) -->
-  <link rel="stylesheet" href="{{ site.data.assets[origin].fontawesome.css | relative_url }}" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="{{ site.data.assets[origin].fontawesome.css | relative_url }}"></noscript>
-
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-
-  {% if site.toc and page.toc %}
-    <link rel="stylesheet" href="{{ site.data.assets[origin].toc.css | relative_url }}">
-  {% endif %}
-
-  {% if page.layout == 'page' or page.layout == 'post' %}
-    <!-- Manific Popup -->
-    <link rel="stylesheet" href="{{ site.data.assets[origin].magnific-popup.css | relative_url }}">
-  {% endif %}
-
-  {% if page.layout == 'home' %}
-    {% assign _first_post = site.posts | where_exp: "item", "item.hidden != true" | first %}
-    {% if _first_post.image %}
-      {% assign _fp_fn = _first_post.path | split: "/" | last | split: "." | first %}
-      {% assign _fp_img_prefix = site.img_cdn | append: site.img_cdn_path_prefix | append: _fp_fn | append: "/" | append: _first_post.image %}
-      <link rel="preload" as="image" type="image/avif" href="{{ _fp_img_prefix }}.avif">
-    {% endif %}
-  {% endif %}
-
-  {% unless site.theme_mode %}
-    {% include mode-toggle.html %}
-  {% endunless %}
-</head>
+<!-- Structured data for search engines. This is data, not a script that runs. -->
+{%- capture same_as -%}[{% for link in me.links %}{{ link.url | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}]{%- endcapture -%}
+{%- capture person -%}{"@type":"Person","name":{{ me.name | jsonify }},"jobTitle":{{ me.headline | jsonify }},"url":{{ site.url | jsonify }},"image":{{ share_image | jsonify }},"sameAs":{{ same_as }}}{%- endcapture -%}
+{%- if page.collection == "posts" %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"dateModified":{{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"image":{{ share_image | jsonify }},"author":{{ person }}}</script>
+{%- elsif page.url == "/" or page.url == "/about/" or page.url == "/resume/" %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{{ person }}}</script>
+{%- endif %}

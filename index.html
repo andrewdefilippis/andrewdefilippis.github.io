@@ -1,4 +1,84 @@
 ---
-layout: home
-# Index page
+layout: default
+title: Home
+wide: true
 ---
+{%- assign me = site.data.profile -%}
+<section class="hero">
+  <div>
+    <p class="eyebrow">{{ me.headline }} · {{ me.location }}</p>
+    <h1>Hi, I'm {{ me.name | split: " " | first }}.</h1>
+    <p class="lede">{{ me.pitch }}</p>
+    {%- if me.status.open %}
+    <p class="status">{{ me.status.text }}</p>
+    {%- endif %}
+    <p class="actions">
+      <a class="button primary" href="{{ '/resume/' | relative_url }}">Read my resume</a>
+      <a class="button" href="{{ '/projects/' | relative_url }}">See my projects</a>
+      <a class="button" href="#contact">Get in touch</a>
+    </p>
+  </div>
+  <img class="avatar" src="{{ me.avatar }}" alt="Photo of {{ me.name }}" width="256" height="256" fetchpriority="high">
+</section>
+
+<section class="labeled" aria-labelledby="glance">
+  <h2 id="glance">At a glance</h2>
+  <ul class="stats">
+    {%- assign years_in_tech = site.time | date: "%Y" | minus: me.career_start %}
+    <li><strong>{{ years_in_tech }} years</strong> in tech, from Washington State University's Student Computing Services to AWS</li>
+    <li><strong>11 years</strong> at AWS, from support engineer to systems development engineer</li>
+    <li><strong>27 regions</strong> where I launched API Gateway, CloudWatch Logs, and Telemetry Config</li>
+    <li><strong>50+ packages</strong> and 30+ pipelines built using my TypeScript AWS CDK constructs</li>
+  </ul>
+</section>
+
+<section class="labeled" aria-labelledby="what">
+  <h2 id="what">What I do</h2>
+  <div class="columns">
+    <div>
+      <h3>Infrastructure and automation</h3>
+      <p>I design and automate cloud infrastructure, CI/CD pipelines, and tests, using TypeScript and the AWS CDK.</p>
+    </div>
+    <div>
+      <h3>Launches and reliability</h3>
+      <p>I configure, deploy, and launch services in new AWS regions, including air-gapped government clouds. I've been the primary on-call and incident response engineer for multiple AWS production services.</p>
+    </div>
+    <div>
+      <h3>AI-assisted engineering</h3>
+      <p>I build tools that let AI agents work safely with real systems, such as an MCP server for service operations and agent skills that bring AI into everyday software development.</p>
+    </div>
+    <div>
+      <h3>Technical leadership</h3>
+      <p>I've project-managed region launches across 4 teams, led Sev2 incident response and design reviews, and mentored engineers. I've also interviewed engineering candidates for Amazon's hiring loops, and trained support engineers worldwide as AWS's first API Gateway expert.</p>
+    </div>
+  </div>
+</section>
+
+<section class="labeled" aria-labelledby="work">
+  <h2 id="work">Selected work</h2>
+  <div class="cards featured">
+    {%- assign featured = site.data.projects | where: "featured", true %}
+    {%- for project in featured limit: 3 %}
+    {% include project-card.html project=project %}
+    {%- endfor %}
+  </div>
+  <p><a href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">→</span></a></p>
+</section>
+
+<section aria-labelledby="contact" class="contact">
+  <h2 id="contact">Get in touch</h2>
+  {%- assign linkedin = me.links | where: "name", "LinkedIn" | first %}
+  <p>
+    {%- if me.status.open %}I'm looking for my next role.{% else %}I'm always happy to connect.{% endif %}
+    {% if me.email != "" %}Email me or send a message on LinkedIn.{% else %}The fastest way to reach me is a message on LinkedIn.{% endif -%}
+  </p>
+  <ul class="inline-list">
+    {%- if me.email != "" %}
+    <li><a class="button primary" href="mailto:{{ me.email }}">Email me</a></li>
+    {%- endif %}
+    {%- if linkedin %}
+    <li><a class="button{% if me.email == "" %} primary{% endif %}" href="{{ linkedin.url }}">Message me on LinkedIn</a></li>
+    {%- endif %}
+    <li><a class="button" href="{{ '/resume/' | relative_url }}">Read my resume</a></li>
+  </ul>
+</section>

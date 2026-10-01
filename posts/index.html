@@ -1,0 +1,15 @@
+---
+title: Writing
+description: Posts by Andrew DeFilippis about cloud computing, careers in tech, and life.
+layout: default
+---
+<h1>Writing</h1>
+<p class="lede">Everything I've written, newest first. Browse by <a href="{{ '/tags/' | relative_url }}">tag</a> or subscribe with the <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a>.</p>
+
+{%- assign by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{%- for year in by_year %}
+<section class="labeled" aria-labelledby="y{{ year.name }}">
+  <h2 id="y{{ year.name }}">{{ year.name }}</h2>
+  {% include post-list.html posts=year.items %}
+</section>
+{%- endfor %}

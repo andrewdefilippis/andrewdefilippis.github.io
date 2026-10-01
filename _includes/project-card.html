@@ -1,0 +1,23 @@
+{%- assign project = include.project -%}
+<article class="card">
+  <h3>
+    {%- if project.url %}<a href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif -%}
+  </h3>
+  {%- assign subtitle = project.org | default: project.label %}
+  {%- if subtitle %}
+  <p class="meta">{{ subtitle }}</p>
+  {%- endif %}
+  <p>{{ project.summary }}</p>
+  {%- if project.details and include.details %}
+  <ul>
+    {%- for line in project.details %}
+    <li>{{ line }}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+  {%- if project.tech %}
+  <ul class="tags" aria-label="Technologies">
+    {%- for t in project.tech %}<li>{{ t }}</li>{% endfor %}
+  </ul>
+  {%- endif %}
+</article>

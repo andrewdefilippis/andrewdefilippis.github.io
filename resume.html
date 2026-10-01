@@ -1,0 +1,89 @@
+---
+title: Resume
+description: Resume of Andrew DeFilippis, Systems Development Engineer. 11 years at AWS in infrastructure as code, CI/CD, region expansion, reliability, and AI-powered tooling.
+layout: default
+---
+{%- assign me = site.data.profile -%}
+<article class="prose resume labeled">
+<header class="resume-header">
+  <h1>{{ me.name }}</h1>
+  <p class="lede">{{ me.headline }} · {{ me.resume_location }}</p>
+  <ul class="inline-list contact-line">
+    {%- if me.email != "" %}<li><a href="mailto:{{ me.email }}">{{ me.email }}</a></li>{% endif %}
+    <li><a href="{{ site.url }}">{{ site.url | remove: "https://" | remove: "www." }}</a></li>
+    {%- for link in me.links limit: 2 %}
+    <li><a href="{{ link.url }}">{{ link.url | remove: "https://" | remove: "www." }}</a></li>
+    {%- endfor %}
+  </ul>
+  {%- if me.status.open %}
+  <p class="status no-print">{{ me.status.text }}</p>
+  {%- endif %}
+  <p class="no-print">
+    {%- if me.resume_pdf != "" %}<a class="button primary" href="{{ me.resume_pdf | relative_url }}">Download PDF</a>{% endif %}
+    <span class="hint">This page is formatted for printing. Use your browser's Print and choose “Save as PDF”.</span>
+  </p>
+</header>
+
+<h2>Summary</h2>
+
+<p>Systems Development Engineer with 11 years at AWS building and scaling global services. Focused on application development, infrastructure automation, and reliability. Designed reusable TypeScript AWS CDK constructs for cross-team use and built AI-powered operational tooling in Rust. Led infrastructure design for CloudWatch Observability Admin, region expansion across Amazon Dedicated Cloud and public AWS Regions, and CI/CD modernization. Experienced in leadership: mentoring engineers, leading design reviews and Sev2 incident response, and project-managing region launches across 4 teams.</p>
+
+<h2>Experience</h2>
+
+<section class="job">
+  <h3>Systems Development Engineer II <span>Amazon Web Services</span></h3>
+  <p class="meta">Seattle, WA · August 2022 to April 2026</p>
+  <ul>
+    <li>Designed and built an internal Rust MCP server that lets AI agents run sensitive operational commands without exposing credentials, pull time-ranged logs and system state across AWS accounts, and suggest root causes and mitigations. Cut triage time from about 30 minutes to about 15.</li>
+    <li>Created an AI "metarepo": one VS Code workspace across 50+ packages, each still its own Git repository, so AI agents can search the whole service (infrastructure, pipelines, tests, and business logic) at once.</li>
+    <li>Architected infrastructure as code for CloudWatch Observability Admin in TypeScript CDK. Reusable constructs adopted across 50+ packages and 30+ pipelines. Mentored engineers on CDK patterns and led infrastructure design reviews.</li>
+    <li>Automated region expansion, cutting per-region provisioning from days to hours across 17 region builds.</li>
+    <li>Wrote Java canary and integration tests for the CloudWatch Logs S3 Tables integration, catching several late API issues before launch.</li>
+    <li>Owned CI/CD end to end. Moved from legacy Ruby pipeline templates to centralized TypeScript CDK pipelines, reducing configuration drift and simplifying pipeline creation and management.</li>
+    <li>Co-designed the donor region build process, making CloudWatch Logs available in new regions between 4 and 6 weeks before its dependencies were ready.</li>
+    <li>Primary on-call for 6 production services. Led Sev2 incident response, post-incident reviews, and follow-up fixes.</li>
+  </ul>
+</section>
+
+<section class="job">
+  <h3>Systems Engineer II <span>Amazon Web Services</span></h3>
+  <p class="meta">Seattle, WA · June 2017 to August 2022</p>
+  <ul>
+    <li>Led API Gateway launches in 14 new AWS Regions and 3 new Amazon Dedicated Cloud regions, coordinating networking, security, and identity dependencies.</li>
+    <li>Owned API Gateway region builds end to end as both project manager and engineer: planned and coordinated the work across 4 teams, then built, deployed, and launched the service in each new region.</li>
+    <li>Automated key parts of the region build runbook with Python, Jinja, and ERB templates, cutting 2 weeks from each region build.</li>
+  </ul>
+</section>
+
+<section class="job">
+  <h3>Cloud Support Engineer II <span>Amazon Web Services</span></h3>
+  <p class="meta">Seattle, WA · 2014 to 2017</p>
+  <ul>
+    <li>First API Gateway subject matter expert in Seattle. Led global training for support engineers and wrote internal and public documentation.</li>
+  </ul>
+</section>
+
+<h2>Earlier experience</h2>
+
+<ul class="compact">
+  <li><strong>Service Desk Specialist</strong>, MultiCare Health System, 2012 to 2014</li>
+  <li><strong>Junior Systems and Network Administrator</strong>, ReachONE Internet, 2011 to 2012</li>
+  <li><strong>IT Intern</strong>, Clover Park Technical College, 2010 to 2011</li>
+  <li><strong>Computer Technician</strong>, Washington State University, 2007 to 2008</li>
+</ul>
+
+<h2>Skills</h2>
+
+<dl class="skills">
+  <dt>Languages</dt><dd>Java, TypeScript, Bash, Ruby, Python, Rust</dd>
+  <dt>Infrastructure</dt><dd>AWS, AWS CDK, CloudFormation, Docker, Linux, macOS</dd>
+  <dt>AWS services</dt><dd>API Gateway, Lambda, CloudWatch, DynamoDB, S3, EC2, Auto Scaling, ELB, IAM</dd>
+  <dt>Practices</dt><dd>CI/CD, SRE, incident management, on-call, SLOs and error budgets, capacity planning, infrastructure as code, Git, Agile</dd>
+  <dt>AI tooling</dt><dd>Model Context Protocol (MCP) servers, AI agents, AI-assisted development workflows</dd>
+  <dt>Learning</dt><dd>Kubernetes, Terraform, Ansible</dd>
+</dl>
+
+<h2>Education</h2>
+
+<p><strong>Associate degree, Computer Networking and Information Systems Security</strong>, Clover Park Technical College, 2011</p>
+</article>

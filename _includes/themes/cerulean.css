@@ -1,0 +1,47 @@
+/* Color theme. Pick one with `color_theme` in _config.yml. */
+:root {
+  color-scheme: light dark;
+
+  /* Cerulean: Cool slate-white with a cerulean (sea blue) accent. */
+  --bg: #f3f6f7;
+  --surface: #e7ecee;
+  --text: #13191c;
+  --muted: #55616a;
+  --border: #d3dbdf;
+  --accent: #075e8f;
+  --accent-fill: #075e8f;
+  --accent-text: #f3f6f7;
+  --danger: #a3271f;
+  --warning: #8a6100;
+  --info: #2f6672;
+  --tip: #4d6b26;
+
+  --code-comment: #6f6a62;
+  --code-keyword: #8a3a5c;
+  --code-string: #4d6b26;
+  --code-number: #2f6672;
+  --code-function: #8a6100;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1418;
+    --surface: #142026;
+    --text: #e0e9ed;
+    --muted: #96a6ae;
+    --border: #243239;
+    --accent: #6cc4f2;
+    --accent-fill: #0b6699;
+    --accent-text: #ffffff;
+    --danger: #f2786b;
+    --warning: #d9a93f;
+    --info: #7fb3bd;
+    --tip: #a3c26b;
+
+    --code-comment: #8f8a80;
+    --code-keyword: #e39ab8;
+    --code-string: #b4cf7d;
+    --code-number: #8cc1ca;
+    --code-function: #e0b25a;
+  }
+}

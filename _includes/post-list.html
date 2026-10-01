@@ -1,0 +1,12 @@
+{%- comment -%}
+  A simple list of posts: date and title.
+  Usage: {% include post-list.html posts=site.posts limit=3 %}
+{%- endcomment -%}
+<ul class="post-list">
+  {%- for post in include.posts limit: include.limit %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </li>
+  {%- endfor %}
+</ul>

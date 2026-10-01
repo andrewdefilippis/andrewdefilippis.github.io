@@ -1,0 +1,47 @@
+/* Color theme. Pick one with `color_theme` in _config.yml. */
+:root {
+  color-scheme: light dark;
+
+  /* Steel: Cool gray with a muted Prussian (gray-blue) accent. The quietest of the set. */
+  --bg: #f2f3f3;
+  --surface: #e6e8e9;
+  --text: #171b1f;
+  --muted: #586068;
+  --border: #d2d6d9;
+  --accent: #24506e;
+  --accent-fill: #24506e;
+  --accent-text: #f2f3f3;
+  --danger: #a3271f;
+  --warning: #8a6100;
+  --info: #2f6672;
+  --tip: #4d6b26;
+
+  --code-comment: #6f6a62;
+  --code-keyword: #8a3a5c;
+  --code-string: #4d6b26;
+  --code-number: #2f6672;
+  --code-function: #8a6100;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111518;
+    --surface: #191e22;
+    --text: #e1e5e8;
+    --muted: #99a3ab;
+    --border: #2a3137;
+    --accent: #8fbedd;
+    --accent-fill: #2a5b7d;
+    --accent-text: #ffffff;
+    --danger: #f2786b;
+    --warning: #d9a93f;
+    --info: #7fb3bd;
+    --tip: #a3c26b;
+
+    --code-comment: #8f8a80;
+    --code-keyword: #e39ab8;
+    --code-string: #b4cf7d;
+    --code-number: #8cc1ca;
+    --code-function: #e0b25a;
+  }
+}

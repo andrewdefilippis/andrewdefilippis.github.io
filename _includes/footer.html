@@ -1,0 +1,16 @@
+{%- assign me = site.data.profile -%}
+<footer class="site-footer">
+  <ul class="inline-list">
+    {%- if me.email != "" %}
+    <li><a href="mailto:{{ me.email }}">Email</a></li>
+    {%- endif %}
+    {%- for link in me.links %}
+    <li><a href="{{ link.url }}" rel="me">{{ link.name }}</a></li>
+    {%- endfor %}
+    <li><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></li>
+  </ul>
+  <p>
+    © {{ site.time | date: "%Y" }} {{ me.full_name }}.
+    <a href="#top">Back to top</a>
+  </p>
+</footer>

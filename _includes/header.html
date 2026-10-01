@@ -1,0 +1,15 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="site-name" href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>{{ site.data.profile.name }}</a>
+  <nav aria-label="Main">
+    <ul>
+      {%- for item in site.data.nav %}
+        {%- if item.url == "/gallery/" %}{% unless site.data.gallery.size > 0 %}{% continue %}{% endunless %}{% endif -%}
+        {%- assign here = false -%}
+        {%- if page.url contains item.url %}{% assign here = true %}{% endif -%}
+        {%- if item.url == "/posts/" and page.url == "/tags/" %}{% assign here = true %}{% endif %}
+      <li><a href="{{ item.url | relative_url }}"{% if here %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
+</header>

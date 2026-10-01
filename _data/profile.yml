@@ -1,0 +1,40 @@
+# Who you are. Used by the home page, resume, footer, and page metadata.
+
+name: Andrew DeFilippis
+full_name: Andrew R. DeFilippis
+headline: Systems Development Engineer
+# Where you live. Shown on the home page and About.
+location: University Place, Washington
+# The area employers search by. Shown on the resume; matches LinkedIn.
+resume_location: Greater Seattle Area
+avatar: https://content.andrewdefilippis.com/images/avatar/20230223060800/andrewdefilippis.webp
+
+# One or two sentences. This is the first thing a recruiter reads.
+pitch: >-
+  I build the infrastructure, pipelines, and tools that let cloud services launch
+  and run reliably, and I lead the projects that ship them. I spent 11 years at AWS, most
+  recently designing infrastructure as code and AI-powered tooling for CloudWatch.
+
+# The year you started working in tech. The home page counts years from this.
+career_start: 2007
+
+# Shown as a banner on the home page and resume. Set `open: false` to hide it.
+status:
+  open: true
+  text: Open to engineering management, systems development, and software development roles.
+
+# Leave empty to hide. Anything here is public and will get spam.
+email: ''
+
+# Optional: path to a PDF copy of your resume, e.g. /assets/andrew-defilippis-resume.pdf
+resume_pdf: ''
+
+links:
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/andrewdefilippis
+  - name: GitHub
+    url: https://github.com/andrewdefilippis
+  - name: GitLab
+    url: https://gitlab.com/andrewdefilippis
+  - name: ORCID
+    url: https://orcid.org/0009-0009-1829-1583

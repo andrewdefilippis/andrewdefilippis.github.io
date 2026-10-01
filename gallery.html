@@ -1,0 +1,34 @@
+---
+title: Gallery
+description: Photos by and of Andrew DeFilippis.
+layout: default
+wide: true
+---
+{%- comment -%}
+  Each photo is a button that opens a "popover", a built-in browser feature.
+  It needs no JavaScript, and Escape or a click outside closes it.
+  Photos are listed in _data/gallery.yml.
+{%- endcomment -%}
+<h1>Gallery</h1>
+{%- if site.data.gallery.size > 0 %}
+<p class="lede">Select a photo to see it full size.</p>
+<ul class="gallery">
+  {%- for photo in site.data.gallery %}
+  <li>
+    <button type="button" class="thumb" popovertarget="photo-{{ forloop.index }}">
+      <img src="{{ photo.thumb | default: photo.src }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" width="400" height="300">
+    </button>
+    {%- if photo.caption %}<p class="caption">{{ photo.caption }}</p>{% endif %}
+    <div id="photo-{{ forloop.index }}" class="lightbox" popover>
+      <figure>
+        <img src="{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy" decoding="async">
+        {%- if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+      </figure>
+      <button type="button" class="button" popovertarget="photo-{{ forloop.index }}" popovertargetaction="hide">Close</button>
+    </div>
+  </li>
+  {%- endfor %}
+</ul>
+{%- else %}
+<p>Photos coming soon.</p>
+{%- endif %}
